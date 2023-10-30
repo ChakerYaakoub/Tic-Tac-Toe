@@ -392,7 +392,8 @@ class Game:
         screen.blit(mode_text, (200, 60))
 
         self.reset_button.draw(screen)
-        self.switch_mode_level.draw(screen)
+        if not self.isover():
+            self.switch_mode_level.draw(screen)
 
         if self.board.marked_sqrs == 0:
             self.switch_turn_button.draw(screen)
